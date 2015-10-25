@@ -1,0 +1,16 @@
+= form_for @user, class: 'form' do |f|
+
+  .form-group
+    = f.label :email, class: 'control-label'
+    = f.email_field :email, placeholder: 'Your email', class: 'form-control'
+    
+  .form-group
+    = f.label :password, class: 'control-label'
+    = f.password_field :password, placeholder: 'Your password', class: 'form-control'
+    
+  .form-group
+    = f.label :password_confirmation, class: 'control-label'
+    = f.password_field :password_confirmation, placeholder: 'Confirm your password', class: 'form-control'
+    
+  .form-group
+    = f.submit 'Sign Up', class: 'btn btn-primary'

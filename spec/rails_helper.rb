@@ -20,6 +20,9 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
+
+  config.include FactoryGirl::Syntax::Methods
+  config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
 end
 
 Shoulda::Matchers.configure do |config|

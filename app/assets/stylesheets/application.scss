@@ -3,3 +3,7 @@
 @import 'bootstrap';
 
 @import 'app/**/*';
+
+html, body {
+  min-height: 100%;
+}
