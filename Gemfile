@@ -12,9 +12,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'slim-rails'
+gem 'sorcery'
 
 group :development, :test do
   gem 'byebug'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -24,5 +26,5 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
