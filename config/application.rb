@@ -21,5 +21,6 @@ module Travelshopper
       g.stylesheets false
       g.javascripts false
       g.helper false
+    end
   end
 end
