@@ -1,0 +1,20 @@
+.pages.landing {
+  background-image: image-url('landing_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .hero {
+    color: #34495e;
+    margin-top: 15%;
+    text-align: center;
+
+    h1 {
+      font-size: 64px;
+    }
+
+    p {
+
+    }
+  }
+
+}
