@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'slim-rails'
 gem 'sorcery'
+gem 'country_select'
 
 group :development, :test do
   gem 'byebug'

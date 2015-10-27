@@ -1,0 +1,16 @@
+= form_for @itinerary, class: 'form' do |f|
+  
+  .form-group
+    = f.label :start_date, class: 'control-lable'
+    = f.date_field :start_date, class: 'form-control'
+  
+  .form-group  
+    = f.label :end_date, class: 'control-lable'
+    = f.date_field :end_date, class: 'form-control'
+  
+  .form-group  
+    = f.label :country_code, 'Country', class: 'control-lable'
+    = f.country_select :country_code, class: 'form-control'
+  
+  .form-group
+    = f.submit 'Create'
