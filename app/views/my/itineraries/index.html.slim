@@ -1,0 +1,15 @@
+.container-fluid
+  .row
+    .col-xs-12
+      h3 My Itineraries
+      
+      table.table
+        thead
+          tr
+            th Start Date
+            th End Date
+            th Country
+        
+        tbody
+          = render @itineraries
+      

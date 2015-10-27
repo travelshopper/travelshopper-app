@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :my do
     resource :dashboard, only: [:show]
+    resources :itineraries
   end
 
   root 'pages#landing'

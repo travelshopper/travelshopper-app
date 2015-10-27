@@ -4,6 +4,7 @@ class CreateItineraries < ActiveRecord::Migration
       t.date :start_date, null: false
       t.date :end_date, null: false
       t.string :country_code, null: false
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end

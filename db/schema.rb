@@ -20,11 +20,13 @@ ActiveRecord::Schema.define(version: 20151027002623) do
     t.date     "start_date",   null: false
     t.date     "end_date",     null: false
     t.string   "country_code", null: false
+    t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   add_index "itineraries", ["country_code"], name: "index_itineraries_on_country_code", using: :btree
+  add_index "itineraries", ["user_id"], name: "index_itineraries_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",            null: false
@@ -36,4 +38,5 @@ ActiveRecord::Schema.define(version: 20151027002623) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "itineraries", "users"
 end
