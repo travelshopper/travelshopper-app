@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validates :email, uniqueness: true
 
+  has_many :itineraries
+
 end

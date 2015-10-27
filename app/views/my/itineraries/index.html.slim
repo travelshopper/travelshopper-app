@@ -1,0 +1,17 @@
+.container-fluid
+  .row
+    .col-xs-12
+      h3 My Itineraries
+      
+      = link_to 'New itinerary', new_my_itinerary_path, class: 'btn btn-primary'
+      
+      table.table
+        thead
+          tr
+            th Start Date
+            th End Date
+            th Country
+        
+        tbody
+          = render @itineraries
+      
