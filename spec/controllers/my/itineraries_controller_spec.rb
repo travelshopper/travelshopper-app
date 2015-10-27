@@ -30,4 +30,33 @@ RSpec.describe My::ItinerariesController, type: :controller do
 
   end
 
+  describe 'GET #show' do
+
+    context 'when logged in' do
+
+      before do
+        login_user(user)
+        get :show, id: id
+      end
+
+      context 'with valid id' do
+
+        let(:id) { create(:itinerary, user: user).id }
+
+        it { expect(assigns(:itinerary)).to be_persisted }
+
+      end
+
+      context 'with valid id' do
+
+        let(:id) { '' }
+
+        it { expect(response).to have_http_status(404) }
+
+      end
+
+    end
+
+  end
+
 end
