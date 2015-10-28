@@ -35,4 +35,13 @@ RSpec.describe ItineraryItem, type: :model do
 
   end
 
+  context 'end time must be later than start time' do
+
+    let(:now) { Time.zone.now }
+    subject { build(:itinerary_item, start_time: now, end_time: now) }
+
+    it { is_expected.not_to be_valid }
+
+  end
+
 end
