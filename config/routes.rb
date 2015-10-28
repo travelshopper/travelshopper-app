@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   namespace :my do
     resource :dashboard, only: [:show]
-    resources :itineraries
+    resources :itineraries do
+      resources :itinerary_items, only: [:new, :create]
+    end
   end
 
   root 'pages#landing'
