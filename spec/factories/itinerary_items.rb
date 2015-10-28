@@ -6,5 +6,9 @@ FactoryGirl.define do
     city 'MyString'
     place 'MyString'
     itinerary
+
+    trait :blank_date do
+      date ''
+    end
   end
 end

@@ -1,0 +1,24 @@
+= form_for @itinerary_item, class: 'form' do |f|
+
+  .form-group
+    = f.label :date, class: 'control-lable'
+    = f.date_field :date, class: 'form-control'
+
+  .form-group
+    = f.label :start_time, class: 'control-lable'
+    = f.time_field :start_time, class: 'form-control'
+
+  .form-group
+    = f.label :end_time, class: 'control-lable'
+    = f.time_field :end_time, class: 'form-control'
+
+  .form-group
+    = f.label :city, class: 'control-lable'
+    = f.text_field :city, class: 'form-control'
+
+  .form-group
+    = f.label :place, class: 'control-lable'
+    = f.text_field :place, class: 'form-control'
+
+  .form-group
+    = f.submit 'Create'
