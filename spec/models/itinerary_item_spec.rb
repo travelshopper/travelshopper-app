@@ -11,4 +11,28 @@ RSpec.describe ItineraryItem, type: :model do
 
   it { should belong_to(:itinerary) }
 
+  context 'date must within itinerary range' do
+
+    context 'when date < itinerary start date' do
+
+      let(:itinerary) { create(:itinerary) }
+
+      subject { build(:itinerary_item, itinerary: itinerary, date: itinerary.start_date - 1.day) }
+
+      it { is_expected.not_to be_valid }
+
+    end
+
+    context 'when date > itinerary end date' do
+
+      let(:itinerary) { create(:itinerary) }
+
+      subject { build(:itinerary_item, itinerary: itinerary, date: itinerary.end_date + 1.day) }
+
+      it { is_expected.not_to be_valid }
+
+    end
+
+  end
+
 end
