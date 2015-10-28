@@ -10,4 +10,20 @@ RSpec.describe Itinerary, type: :model do
   it { should belong_to(:user) }
   it { should have_many(:itinerary_items).dependent(:destroy) }
 
+  context 'start date must be future' do
+
+    subject { build(:itinerary, start_date: Date.today) }
+
+    it { is_expected.not_to be_valid }
+
+  end
+
+  context 'end date must be later than start date' do
+
+    subject { build(:itinerary, start_date: Date.today, end_date: Date.today) }
+
+    it { is_expected.not_to be_valid }
+
+  end
+
 end
