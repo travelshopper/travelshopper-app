@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :itinerary_item do
-    date '2015-10-27'
-    start_time '2015-10-27 23:52:24'
-    end_time '2015-10-27 23:52:24'
+    date Date.current + 1.day
+    start_time Date.current + 1.day
+    end_time Date.current + 2.days
     city 'MyString'
     place 'MyString'
     itinerary

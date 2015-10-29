@@ -79,7 +79,7 @@ RSpec.describe My::ItinerariesController, type: :controller do
 
     context 'with valid params' do
 
-      let(:params) { { start_date: Date.today, end_date: Date.today + 1.day, country_code: 'SG' } }
+      let(:params) { attributes_for(:itinerary) }
 
       it { expect(assigns(:itinerary)).to be_persisted }
 
@@ -87,7 +87,7 @@ RSpec.describe My::ItinerariesController, type: :controller do
 
     context 'with invalid params' do
 
-      let(:params) { { start_date: '', end_date: Date.today + 1.day, country_code: 'SG' } }
+      let(:params) { attributes_for(:itinerary, :invalid_start_date) }
 
       it { expect(assigns(:itinerary)).not_to be_persisted }
       it { expect(response).to render_template(:new) }

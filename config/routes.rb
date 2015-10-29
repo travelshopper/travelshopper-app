@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :itineraries do
       resources :itinerary_items, only: [:new, :create]
     end
+    resources :itinerary_items, only: [:show] do
+      resources :wish_items, only: [:new, :create]
+    end
   end
 
   root 'pages#landing'

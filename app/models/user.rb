@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   has_many :itineraries
+  has_many :itinerary_items, through: :itineraries
 
 end
