@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027235224) do
+ActiveRecord::Schema.define(version: 20151029014044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 20151027235224) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  create_table "wish_items", force: :cascade do |t|
+    t.text     "description",       null: false
+    t.integer  "itinerary_item_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "wish_items", ["itinerary_item_id"], name: "index_wish_items_on_itinerary_item_id", using: :btree
+
   add_foreign_key "itineraries", "users"
   add_foreign_key "itinerary_items", "itineraries"
+  add_foreign_key "wish_items", "itinerary_items"
 end

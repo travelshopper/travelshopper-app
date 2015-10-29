@@ -10,6 +10,7 @@ RSpec.describe ItineraryItem, type: :model do
   it { should validate_presence_of(:itinerary) }
 
   it { should belong_to(:itinerary) }
+  it { should have_many(:wish_items).dependent(:destroy) }
 
   context 'date must within itinerary range' do
 

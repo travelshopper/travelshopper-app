@@ -6,6 +6,7 @@ class ItineraryItem < ActiveRecord::Base
   validate :end_time_must_be_later_than_start_time, if: 'start_time.present? && end_time.present?'
 
   belongs_to :itinerary
+  has_many :wish_items, dependent: :destroy
 
   private
 
