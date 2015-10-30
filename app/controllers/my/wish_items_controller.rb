@@ -1,5 +1,4 @@
 class My::WishItemsController < My::BaseController
-
   before_action :prepare_itinerary_item, only: [:new, :create]
 
   def new
@@ -26,5 +25,4 @@ class My::WishItemsController < My::BaseController
   def wish_item_params
     params.require(:wish_item).permit(:description)
   end
-
 end

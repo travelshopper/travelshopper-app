@@ -1,5 +1,4 @@
 class ItineraryItem < ActiveRecord::Base
-
   validates :date, :start_time, :end_time, :city, :place, :itinerary, presence: true
 
   validate :date_must_be_within_itinerary_range, if: 'date.present?'
@@ -17,5 +16,4 @@ class ItineraryItem < ActiveRecord::Base
   def end_time_must_be_later_than_start_time
     errors.add(:end_time, 'End time must be later than start time') if end_time <= start_time
   end
-
 end

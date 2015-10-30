@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new; end
 
   def create
@@ -15,5 +14,4 @@ class SessionsController < ApplicationController
     logout
     redirect_to root_path, notice: 'Sign out successfully.'
   end
-
 end
