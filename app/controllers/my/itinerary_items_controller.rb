@@ -1,5 +1,4 @@
 class My::ItineraryItemsController < My::BaseController
-
   before_action :prepare_itinerary, only: [:new, :create]
 
   def new
@@ -26,5 +25,4 @@ class My::ItineraryItemsController < My::BaseController
   def itinerary_item_params
     params.require(:itinerary_item).permit(:date, :start_time, :end_time, :place, :city)
   end
-
 end

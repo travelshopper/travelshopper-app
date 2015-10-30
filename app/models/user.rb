@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   authenticates_with_sorcery!
 
   validates :email, :password, :password_confirmation, presence: true
@@ -8,5 +7,4 @@ class User < ActiveRecord::Base
 
   has_many :itineraries
   has_many :itinerary_items, through: :itineraries
-
 end

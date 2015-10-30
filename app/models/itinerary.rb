@@ -1,5 +1,4 @@
 class Itinerary < ActiveRecord::Base
-
   validates :country_code, :start_date, :end_date, :user, presence: true
 
   with_options if: 'start_date.present?' do
@@ -15,11 +14,10 @@ class Itinerary < ActiveRecord::Base
   private
 
   def start_date_must_be_future
-    errors.add(:start_date, 'Start date must be future') if start_date <= Date.today
+    errors.add(:start_date, 'Start date must be future') if start_date <= Time.zone.today
   end
 
   def end_date_must_be_later_than_start_date
     errors.add(:end_date, 'End date must be later than start date') if end_date <= start_date
   end
-
 end

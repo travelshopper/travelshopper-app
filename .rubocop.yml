@@ -1,0 +1,24 @@
+AllCops:
+  RunRailsCops: true
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+Metrics/LineLength:
+  Max: 138
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/my/base_controller.rb'
+    - 'app/controllers/my/dashboards_controller.rb'
+    - 'app/controllers/my/itineraries_controller.rb'
+    - 'app/controllers/my/itinerary_items_controller.rb'
+    - 'app/controllers/my/wish_items_controller.rb'
+
+Style/Documentation:
+  Enabled: false

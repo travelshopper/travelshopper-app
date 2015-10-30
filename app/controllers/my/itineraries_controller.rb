@@ -1,5 +1,4 @@
 class My::ItinerariesController < My::BaseController
-
   def index
     @itineraries = current_user.itineraries.order_by_latest
   end
@@ -28,5 +27,4 @@ class My::ItinerariesController < My::BaseController
   def itinerary_params
     params.require(:itinerary).permit(:start_date, :end_date, :country_code)
   end
-
 end
