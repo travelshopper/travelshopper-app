@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    if login(params[:email], params[:password])
+    if login(params[:email], params[:password], params[:remember])
       redirect_to my_dashboard_path, notice: 'Sign in successfully.'
     else
       flash[:notice] = 'Fail to signin'
