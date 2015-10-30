@@ -9,4 +9,8 @@
     = password_field_tag :password, nil, placeholder: 'Your password', class: 'form-control'
     
   .form-group
+    = check_box_tag :remember, params[:remember], true
+    = label_tag :remember
+    
+  .form-group
     = submit_tag 'Sign in', class: 'btn btn-primary'
