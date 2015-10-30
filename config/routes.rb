@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete '/signout' => 'sessions#destroy', as: :signout
   resource :session, only: [:create]
 
+  resources :password_resets, only: [:create, :edit, :update]
+
   namespace :my do
     resource :dashboard, only: [:show]
     resources :itineraries do
