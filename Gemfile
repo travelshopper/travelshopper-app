@@ -18,6 +18,7 @@ gem 'country_select'
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails'
+  gem 'rubocop'
 end
 
 group :development do
