@@ -23,6 +23,6 @@ class My::WishItemsController < My::BaseController
   end
 
   def wish_item_params
-    params.require(:wish_item).permit(:description)
+    params.require(:wish_item).permit(:description, wish_item_images: [:image, :_destroy])
   end
 end
