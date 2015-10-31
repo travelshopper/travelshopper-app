@@ -1,8 +1,13 @@
 = form_for @wish_item, class: 'form' do |f|
   
 .form-group
-  = f.label :description, class: 'control-lable'
+  = f.label :description, class: 'control-label'
   = f.text_area :description, row: 4, class: 'form-control'
+  
+.form-group
+  = f.label :wish_item_images, class: 'control-label'
+  = f.fields_for :wish_item_images do |wish_item_field|
+    = wish_item_field.file_field :image, accept: 'image/jpeg, image/jpg, image/gif, image/png'
 
 .form-group
   = f.submit 'Create', class: 'btn btn-primary'
