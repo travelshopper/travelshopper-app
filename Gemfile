@@ -14,6 +14,8 @@ gem 'bootstrap-sass'
 gem 'slim-rails'
 gem 'sorcery'
 gem 'country_select'
+gem 'mini_magick'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug'
